@@ -9,12 +9,21 @@ const Contact = () => {
 
     return (
         <>
-            <div className='breadcrumbs d-flex align-items-center'>
-                <div className='container position-relative d-flex flex-column align-items-center'>
-                    <h2>Contact Us</h2>
-                </div>
+            {/* Breadcrumb area */}
+            <section className='breadcrumb_area'>
+                <div className='overlay bg-parallax'>
 
-            </div>
+                </div>
+                <div className='container'>
+                    <div className='page-cover text-center'>
+                        <h2 className='page-cover-title'>Contact Us</h2>
+                        <ol className='breadcrumb'>
+                            <li><a href='#home'>Home</a> </li>
+                            <li className='active'>Contact Us</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
             <Grid>
                 <Paper elevation={20} style={paperStyle}>
                     <form>

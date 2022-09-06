@@ -5,12 +5,21 @@ import './services.css';
 const Services = () => {
     return (
         <>
-            <div className='breadcrumbs d-flex align-items-center'>
-                <div className='container position-relative d-flex flex-column align-items-center'>
-                    <h2>Services</h2>
+            {/* Breadcrumb area */}
+            <section className='breadcrumb_area'>
+                <div className='overlay bg-parallax'>
 
                 </div>
-            </div>
+                <div className='container'>
+                    <div className='page-cover text-center'>
+                        <h2 className='page-cover-title'>Services</h2>
+                        <ol className='breadcrumb'>
+                            <li><a href='#home'>Home</a> </li>
+                            <li className='active'>Services</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
             <section className='services'>
                 <div className='container'>
                     <div className='row'>
