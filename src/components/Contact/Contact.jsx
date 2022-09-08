@@ -1,12 +1,18 @@
 import React from 'react'
-// import Form from 'react-bootstrap';
-import { Grid, Paper, TextField, Button, TextareaAutosize } from '@mui/material';
-const Contact = () => {
-    const paperStyle = { padding: '30px 20px', width: 1300, margin: "50px auto", backgroundColor: '#fff' }
-    const textfieldStyle = { margin: '5px', padding: '5px' }
-    const buttonStyle = { padding: '10px', margin: '10px', backgroundColor: '#f03c02' }
-    const textareaStyle = { width: 1250, margin: 10, padding: 5, backgroundColor: '#fff' }
+import { Icon } from '@iconify/react';
+import { useForm } from 'react-hook-form';
+import './contact.css';
 
+const Contact = () => {
+    const {
+        register, handleSubmit, formState: { errors },
+        reset,
+        trigger,
+    } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        reset();
+    };
     return (
         <>
             {/* Breadcrumb area */}
@@ -24,18 +30,105 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
-            <Grid>
-                <Paper elevation={20} style={paperStyle}>
-                    <form>
-                        <TextField label='Your Name' placeholder='Your Name' fullWidth required style={textfieldStyle} />
-                        <TextField label='Your Email' placeholder='Your Email' fullWidth required style={textfieldStyle} />
-                        <TextField label='Subject' placeholder='Subject' fullWidth required style={textfieldStyle} />
-                        <TextareaAutosize label='Message' placeholder='Message' minRows={5} maxRows={5} style={textareaStyle} required fullWidth />
-                        <Button type='submit' variant='contained' color='primary' style={buttonStyle}>Send Message</Button>
-                    </form>
-                </Paper>
+            <section className='contact'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-lg-6'>
+                            <div className='info-box mb-4'>
+                                <Icon className='icon' icon="bx:map" />
+                                <h3>Our Address</h3>
+                                <p>Kiminini, Kitale</p>
+                            </div>
+                        </div>
+                        <div className='col-lg-3 col-md-6'>
+                            <div className='info-box mb-4'>
+                                <Icon className='icon' icon="bx:envelope" />
+                                <h3>Email Us</h3>
+                                <p>coolplace@info.com</p>
+                            </div>
+                        </div>
+                        <div className='col-lg-3 col-md-6'>
+                            <div className='info-box mb-4'>
+                                <Icon className='icon' icon="bx:phone-call" />
+                                <h3>Call Us</h3>
+                                <p>+254 725 000 000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-lg-12'>
+                            <form className='form' onSubmit={handleSubmit(onSubmit)}>
+                                <div className='row'>
+                                    <div className='col form-group'>
+                                        <label className="col-form-label">Name:</label>
+                                        <input type='text' name='name' className={`form-control ${errors.name && "invalid"}`}
+                                            {...register("name", { required: "Name is Required" })}
+                                            onKeyUp={() => {
+                                                trigger("name");
+                                            }} />
+                                        {errors.name && (
+                                            <small className="text-danger">{errors.name.message}</small>
+                                        )}
+                                    </div>
+                                    <div className='col form-group'>
+                                        <label className="col-form-label">Email:</label>
+                                        <input type='text' name='email' className={`form-control ${errors.email && "invalid"}`}
+                                            {...register("email", {
+                                                required: "Email is Required",
+                                                pattern: {
+                                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                    message: "Invalid email address",
+                                                }
+                                            })}
+                                            onKeyUp={() => {
+                                                trigger("email");
+                                            }} />
+                                        {errors.name && (
+                                            <small className="text-danger">{errors.email.message}</small>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className='form-group'>
+                                    <label className="col-form-label">Subject:</label>
+                                    <input type='text' name='subject' className={`form-control ${errors.subject && "invalid"}`}
+                                        {...register("subject", { required: "Subject is Required" })}
+                                        onKeyUp={() => {
+                                            trigger("subject");
+                                        }} />
+                                    {errors.name && (
+                                        <small className="text-danger">{errors.subject.message}</small>
+                                    )}
+                                </div>
+                                <div className='form-group'>
+                                    <label className="col-form-label">Message:</label>
+                                    <textarea type='text' name='message' className={`form-control ${errors.message && "invalid"}`}
+                                        {...register("message", {
+                                            required: "Message is Required",
+                                            minLength: {
+                                                value: 10,
+                                                message: "Minimum Required length is 10",
+                                            },
+                                            maxLength: {
+                                                value: 50,
+                                                message: "Maximum allowed length is 50 ",
+                                            }
+                                        })}
+                                        onKeyUp={() => {
+                                            trigger("message");
+                                        }} />
+                                    {errors.name && (
+                                        <small className="text-danger">{errors.message.message}</small>
+                                    )}
+                                </div>
+                                <div className='text-center'>
+                                    <button type='submit'>Sent Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            </Grid>
         </>
     )
 }

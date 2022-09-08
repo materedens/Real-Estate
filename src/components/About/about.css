@@ -7,13 +7,13 @@
 .breadcrumb_area {
     position: relative;
     padding: 172px 0px 84px;
-    background: url(../images/slide-1.jpg)no-repeat scroll center 0/cover;
+    background: url(../images/slide-2.jpg)no-repeat scroll center 0/cover;
     z-index: 1;
     overflow: hidden;
 }
 
 .breadcrumb_area .bg-parallax {
-    background: url(../images/slide-1.jpg) no-repeat scroll center 0/cover;
+    background: url(../images/slide-2.jpg) no-repeat scroll center 0/cover;
     opacity: 0.50;
     z-index: -1;
 }

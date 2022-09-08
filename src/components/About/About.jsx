@@ -1,6 +1,6 @@
 import React from 'react'
 import './about.css';
-import back from '../images/Background.png';
+import back from '../images/slide-2.jpg';
 
 const About = () => {
     return (
@@ -22,9 +22,9 @@ const About = () => {
             </section>
             {/* About area */}
             <section className='about section_gap'>
-                <div className='container-fluid'>
+                <div className='container'>
                     <div className='row'>
-                        <div className='col-md-6 d-flex align-items-center'>
+                        <div className='col-md-5 d-flex align-items-center'>
                             <div className='about_content'>
                                 <h2 className='title'>About Us</h2>
                                 <p> We construct both residential estates and offices.
@@ -34,7 +34,7 @@ const About = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className='col-md-5'>
+                        <div className='col-md-7'>
                             <img className='img-fluid' src={back} alt='Cool Place' />
                         </div>
                     </div>

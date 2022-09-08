@@ -18,7 +18,11 @@ const NavbarCustom = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
                         <Nav className='mr-auto my-2 my-lg-0'
-                            style={{ maxHeight: '100' }} navbarScroll >
+                            style={{
+                                maxHeight: '100',
+                                textTransform: 'uppercase',
+                                fontWeight: '500'
+                            }} navbarScroll >
                             <LinkContainer to="/">
                                 <Nav.Link>Home</Nav.Link>
                             </LinkContainer>
