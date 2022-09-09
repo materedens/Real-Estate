@@ -13,10 +13,6 @@ const About = () => {
                 <div className='container'>
                     <div className='page-cover text-center'>
                         <h2 className='page-cover-title'>About Us</h2>
-                        <ol className='breadcrumb'>
-                            <li><a href='#home'>Home</a> </li>
-                            <li className='active'>About Us</li>
-                        </ol>
                     </div>
                 </div>
             </section>

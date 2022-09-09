@@ -23,41 +23,17 @@ const Contact = () => {
                 <div className='container'>
                     <div className='page-cover text-center'>
                         <h2 className='page-cover-title'>Contact Us</h2>
-                        <ol className='breadcrumb'>
-                            <li><a href='#home'>Home</a> </li>
-                            <li className='active'>Contact Us</li>
-                        </ol>
                     </div>
                 </div>
             </section>
             <section className='contact'>
                 <div className='container'>
                     <div className='row'>
-                        <div className='col-lg-6'>
-                            <div className='info-box mb-4'>
-                                <Icon className='icon' icon="bx:map" />
-                                <h3>Our Address</h3>
-                                <p>Kiminini, Kitale</p>
-                            </div>
-                        </div>
-                        <div className='col-lg-3 col-md-6'>
-                            <div className='info-box mb-4'>
-                                <Icon className='icon' icon="bx:envelope" />
-                                <h3>Email Us</h3>
-                                <p>coolplace@info.com</p>
-                            </div>
-                        </div>
-                        <div className='col-lg-3 col-md-6'>
-                            <div className='info-box mb-4'>
-                                <Icon className='icon' icon="bx:phone-call" />
-                                <h3>Call Us</h3>
-                                <p>+254 725 000 000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-lg-12'>
+                        <div className='col-lg-8'>
+
                             <form className='form' onSubmit={handleSubmit(onSubmit)}>
+                                <h4>We are always happy to serve you. Kindly talk to us about property.</h4>
+                                <br />
                                 <div className='row'>
                                     <div className='col form-group'>
                                         <label className="col-form-label">Name:</label>
@@ -110,7 +86,7 @@ const Contact = () => {
                                             },
                                             maxLength: {
                                                 value: 50,
-                                                message: "Maximum allowed length is 50 ",
+                                                message: "Maximum allowed length is 100 ",
                                             }
                                         })}
                                         onKeyUp={() => {
@@ -124,6 +100,20 @@ const Contact = () => {
                                     <button type='submit'>Sent Message</button>
                                 </div>
                             </form>
+                        </div>
+                        <div className='col-lg-4'>
+                            <div className='info-box mb-4'>
+                                <h3>For Inquiries Contact:</h3>
+                                <Icon className='icon' icon="bx:phone-call" />
+                                {/* <h3>Call Us</h3> */}
+                                <p>+254 725 000 000</p><br />
+                                <Icon className='icon' icon="bx:envelope" />
+                                {/* <h3>Email Us</h3> */}
+                                <p>coolplace@info.com</p>
+                            </div><br />
+                            <div className='info-box mb-4'>
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,7 @@
     background: url(../images/slide-2.jpg)no-repeat scroll center 0/cover;
     z-index: 1;
     overflow: hidden;
+    height: 45vh;
 }
 
 .breadcrumb_area .bg-parallax {
